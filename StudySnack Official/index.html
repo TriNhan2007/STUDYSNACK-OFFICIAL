@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width", initial-scale="1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>STUDYSNACK</title>
+  <style>
+
+     body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      color: #003366; /* Dark blue */
+      padding: 30px;
+    }
+    h1 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 40px;
+    }
+    h2 {
+      color: #003366;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      font-size: 18px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .signature {
+      margin-top: 60px;
+      text-align: center;
+      font-style: italic;
+      font-size: 16px;
+      color: #003366;
+    }
+
+
+    body { margin: 0; }
+    #intro {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      transition: opacity 1s;
+      z-index: 9999;
+    }
+
+    #intro img {
+      max-width: 60%;
+      max-height: 60%;
+    }
+
+    #main { display: none; padding: 20px; }
+
+    body {
+    margin: 0; padding: 0;
+    height: 100%; width: 100%;
+    }
+
+    #intro {
+    height: 100vh;
+    width: 100vw;
+    background: url("assets/logo.png") no-repeat center center;
+    background-size: cover; /* đảm bảo lấp đầy */
+    }
+
+  </style>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  <div id="intro">
+    <img src="assets/logo.png" alt="App Logo">
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("intro").style.opacity = "0";
+      setTimeout(() => {
+        document.getElementById("intro").style.display = "none";
+        document.getElementById("main").style.display = "block";
+      }, 1000); // fade out 1s
+    }, 500); // intro hiển thị 0.5s
+  </script>
+
+  <header>
+      <div class="nav container">
+        <a href="#" class="logo-with-img">
+          <span class="logo-text">STUDYSNACK</span>
+          <img src="assets/logo.png" alt="Logo" class="logo-round">
+        </a>
+        
+        <i class="bx bx-shopping-bag" id="cart-icon"></i>
+      </div>
+
+      <div class="cart">
+        <h2 class="cart-title">Giỏ hàng</h2>
+
+        <div class="cart-content">
+          <div class="cart-box">
+            <img src="Drink images/Cacao latte (25k).jpg" alt="" class="cart-img">
+            <div class="detail-box">
+              <div class="cart-product">
+                Cacao latte
+              </div>
+              <div class="cart-price">
+                25k
+              </div>
+              <!-- Example HTML structure -->
+              <div class="cart-box">
+                  <!-- ...existing code... -->
+                  <button class="decrease-btn">−</button>
+                  <input class="cart-quantity" type="number" min="1"    inputmode="numeric" pattern="[0-9]*" value="1">
+                  <button class="add-btn">+</button>
+                  <!-- ...existing code... -->
+              </div>
+            </div>
+            <i class='bx  bx-trash cart-remove' ></i>
+          </div>
+          
+        </div>
+
+        <div class="total">
+          <div class="total-title">
+            Tổng tiền
+          </div>
+          <div class="total-price">
+            0k
+          </div>
+        </div>
+
+        <button type="button" class="btn-buy">
+          Xóa hết
+        </button>
+
+        <i class='bx  bx-x'  id="close-cart"></i> 
+      </div>
+    </div>
+  </header>
+
+  <h1>Menu</h1>
+
+  <h2>Bánh Mì / Bánh Bao</h2>
+  <ul>
+    <li>• Bánh Bao Cút: 18k</li>
+    <li>• Bánh Bao Muối: 22k</li>
+    <li>• Bánh Giò: 15k</li>
+    <li>• Bánh Mì 1 Trứng: 13k</li>
+    <li>• Bánh Mì 2 Trứng: 20k</li>
+    <li>• Bánh Mì Bơ Đậu Phộng: 13k</li>
+    <li>• Bánh Mì Chả: 20k</li>
+    <li>• Bánh Mì Gà Xé: 20k</li>
+    <li>• Bánh Mì Thịt Đầy Đủ: 20k</li>
+    <li>• Bánh Mì Thịt Nạc: 25k</li>
+    <li>• Bánh Mì Xíu Mại: 20k</li>
+  </ul>
+
+  <h2>Xôi</h2>
+  <ul>
+    <li>• Xôi Đùi: 30k</li>
+    <li>• Xôi Gà Xé: 20k</li>
+    <li>• Xôi Gà Xé Lớn: 25k</li>
+    <li>• Xôi Mặn Lớn: 23k</li>
+    <li>• Xôi Mặn Nhỏ: 20k</li>
+  </ul>
+
+  <h2>Bánh Tráng</h2>
+  <ul>
+    <li>• Sợi Trộn Thập Cẩm: 20k</li>
+    <li>• Sợi Trộn Tóp Mỡ: 25k</li>
+    <li>• Sợi Trộn Mỡ Hành: 15k</li>
+    <li>• Dẻo Trộn Thập Cẩm: 20k</li>
+    <li>• Dẻo Trộn Tóp Mỡ: 250k</li>
+    <li>• Dẻo Trộn Mỡ Hành: 15k</li>
+    <li>• Bánh Tráng Cuốn: 20k</li>
+    <li>• Dẻo Cuốn Thập Cẩm: 20k</li>
+    <li>• Dẻo Trộn Thập Cẩm Mỡ Hành: 20k</li>
+  </ul>
+
+  <h2>Tráng Miệng</h2>
+  <ul>
+    <li>• Bánh Flan: 15k (2 hủ)</li>
+    <li>• Panacotta: 15k</li>
+  </ul>
+
+  <h2>Trà Trái Cây</h2>
+  <ul>
+    <li>• Trà Dâu Tằm: 20k</li>
+    <li>• Trà Dâu: 20k</li>
+    <li>• Trà Đào Miếng: 20k</li>
+    <li>• Trà Ổi Hồng: 25k</li>
+    <li>• Trà Đào Dầm: 25k</li>
+    <li>• Trà Tắc Xanh: 25k</li>
+    <li>• Trà Mận Hà Nội: 20k</li>
+    <li>• Trà Mãng Cầu: 20k</li>
+    <li>• Nước Long Nhãn: 20k</li>
+    <li>• Trà Táo Đỏ: 25k</li>
+    <li>• Trà Tắc: 20k</li>
+    <li>• Trà Dứa Thơm: 25k</li>
+    <li>• Trà Trái Cây Nhiệt Đới: 20k</li>
+  </ul>
+
+  <h2>Trà Sữa</h2>
+  <ul>
+    <li>• Trà Sữa Thái Xanh: 20k</li>
+    <li>• Trà Sữa Khoai Môn: 25k</li>
+    <li>• Trà Sữa Truyền Thống: 25k</li>
+    <li>• Trà Sữa Socola: 25k</li>
+    <li>• Trà Sữa Bạc Hà: 25k</li>
+    <li>• Sữa Tươi Trân Châu Đường Đen: 20k</li>
+    <li>• Phô Mai Mặn: 20k</li>
+
+  </ul>
+
+  <h2>Latte</h2>
+  <ul>
+    <li>• Matcha Latte: 25k</li>
+    <li>• Cacao Latte: 25k</li>
+  </ul>
+
+  <div class="signature">
+    "Hãy Nhớ Tới Tác Giả Của Web: Võ Lê Gia Bảo (Học Sinh) & Trí Nhân (Trợ Giảng)"
+  </div>
+
+  <script src="js/main.js">
+
+  </script>
+
+  <!-- ...existing code... -->
+
+  <!-- Move the bottom navbar inside #main so it only appears after intro -->
+  <div id="main" style="display:none; padding:20px;">
+    <!-- ...your main content (header, shop, etc.)... -->
+
+    <!-- Place the navbar here -->
+    <nav class="bottom-nav">
+      <a href="index.html" class="nav-btn" data-section="home">
+        <i class='bx bx-home'></i>
+        <span>Trang Chủ</span>
+      </a>
+      <a href="monan.html" class="nav-btn active" data-section="food">
+        <i class='bx bx-bowl-hot'></i>
+        <span>Món Ăn</span>
+      </a>
+      <a href="douong.html" class="nav-btn" data-section="drink">
+        <i class='bx bx-drink'></i>
+        <span>Đồ Uống</span>
+      </a>
+    </nav>
+  </div>
+
+</body>
+</html>
